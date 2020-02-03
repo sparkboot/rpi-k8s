@@ -105,7 +105,7 @@ $ sudo su -
 # add-apt-repository \
     "deb [arch=arm64] https://download.docker.com/linux/ubuntu disco stable"
 
-# apt-get update && apt-get install -y containerd.io
+# apt-get update && apt-get install -y docker-ce
 
 # mkdir -p /etc/containerd
 
