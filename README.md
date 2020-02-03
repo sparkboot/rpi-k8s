@@ -107,12 +107,20 @@ $ sudo su -
 
 # apt-get update && apt-get install -y docker-ce
 
-# mkdir -p /etc/containerd
-
-# containerd config default > /etc/containerd/config.toml
+# cat > /etc/docker/daemon.json <<EOF
+{
+  "exec-opts": ["native.cgroupdriver=systemd"],
+  "log-driver": "json-file",
+  "log-opts": {
+    "max-size": "100m"
+  },
+  "storage-driver": "overlay2"
+}
+EOF
 
 ```
-/etc/containerd/config.toml
+
+cggroup
 ```
 plugins.cri.systemd_cgroup = true
 ```
