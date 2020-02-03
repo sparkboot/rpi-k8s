@@ -144,6 +144,8 @@ sudo apt-mark hold kubelet kubeadm kubectl
 cgroup_enable=cpu cgroup_enable=memory`
 ```
 
+### Init Master
+
 ```
 $ kubeadm config images pull
 
