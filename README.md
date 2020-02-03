@@ -154,3 +154,16 @@ $ mkdir -p $HOME/.kube
   sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
   sudo chown $(id -u):$(id -g) $HOME/.kube/config
 ```
+
+
+### Join Node
+
+```
+$ kubeadm token list
+
+$ kubeadm token create
+
+$ openssl x509 -pubkey -in /etc/kubernetes/pki/ca.crt | openssl rsa -pubin -outform der 2>/dev/null | openssl dgst -sha256 -hex | sed 's/^.* //'
+
+$ kubeadm join 192.168.0.10:6443 --token 1h0h6r.js5labneufrdep32 --discovery-token-ca-cert-hash sha256:699de9df04b351246932615c82827f47c0aa9729fee1220eddad4ddeec9e9d68
+```
